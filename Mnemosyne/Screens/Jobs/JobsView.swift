@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreData
 
 // TODO: Implemenet filter functionality
 
