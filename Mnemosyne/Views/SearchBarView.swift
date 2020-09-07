@@ -9,22 +9,41 @@ import SwiftUI
 
 struct SearchBarView: View {
     @Binding var searchText: String
+    @State private var editing = false
+
+    private func cancelButtonTapped() {
+        editing = false
+        searchText = ""
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+
+    private func textFieldTapped() {
+        editing = true
+    }
 
     var body: some View {
         HStack {
-            Image(systemName: "magnifyingglass")
-                .foregroundColor(.gray)
-            TextField("Search", text: $searchText)
-            if !searchText.isEmpty {
-                Button(action: { searchText = "" }) {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.gray)
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.gray)
+                TextField("Search", text: $searchText)
+                    .onTapGesture(perform: textFieldTapped)
+                if !searchText.isEmpty {
+                    Button(action: { searchText = "" }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.gray)
+                    }
                 }
             }
+            .padding(10)
+            .background(Color(.systemGray6))
+            .cornerRadius(10)
+            if editing {
+                Button("Cancel", action: cancelButtonTapped)
+                    .transition(.move(edge: .trailing))
+                    .animation(.default)
+            }
         }
-        .padding(10)
-        .background(Color(.systemGray6))
-        .cornerRadius(10)
     }
 }
 
