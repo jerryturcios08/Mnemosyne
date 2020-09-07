@@ -8,14 +8,26 @@
 import SwiftUI
 import CoreData
 
+// TODO: Implemenet filter functionality
+
+fileprivate enum Filter: String {
+    case title = "Title name"
+    case company = "Company name"
+    case dateApplied = "Date applied"
+    case favorite = "Favorite"
+}
+
 struct JobsView: View {
     // MARK: - Properties
 
     @EnvironmentObject var jobStore: JobStore
     @State private var jobSearchText = ""
+    @State private var selectedFilterOption = 3
 
     // Alert visibility boolean values
     @State private var jobSheetVisible = false
+
+    private var filterOptions: [Filter] = [.title, .company, .dateApplied, .favorite]
 
     // MARK: - Methods
 
@@ -61,9 +73,22 @@ struct JobsView: View {
             .navigationTitle("Jobs")
             .fullScreenCover(isPresented: $jobSheetVisible) { JobSheetView() }
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Menu {
+                        Picker("Filter options", selection: $selectedFilterOption) {
+                            Text(filterOptions[0].rawValue).tag(0)
+                            Text(filterOptions[1].rawValue).tag(1)
+                            Text(filterOptions[2].rawValue).tag(2)
+                            Text(filterOptions[3].rawValue).tag(3)
+                        }
+                    } label: {
+                        Image(systemName: "slider.horizontal.3")
+                            .font(.title3)
+                    }
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: addButtonTapped) {
-                        Image(systemName: "plus.circle")
+                        Image(systemName: "plus")
                     }
                 }
             }
