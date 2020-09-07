@@ -20,6 +20,8 @@ struct Job: Codable, Identifiable {
     var title: String
     var company: String
     var dateApplied: Date
+    var notes: String?
+    var contact: String?
     var favorite: Bool
     var status: Status
 }

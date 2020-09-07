@@ -13,9 +13,11 @@ struct JobSheetView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var jobStore: JobStore
 
-    @State private var jobTitle = ""
-    @State private var jobCompany = ""
+    @State private var titleText = ""
+    @State private var companyText = ""
     @State private var dateApplied = Date()
+    @State private var notesText = ""
+    @State private var contactText = ""
     @State private var favorited = false
     @State private var status = 0
 
@@ -32,10 +34,19 @@ struct JobSheetView: View {
     }
 
     private func doneButtonTapped() {
-        if jobTitle.isEmpty || jobCompany.isEmpty {
+        if titleText.isEmpty || companyText.isEmpty {
             errorAlertVisible = true
         } else {
-            let job = Job(title: jobTitle, company: jobCompany, dateApplied: dateApplied, favorite: favorited, status: statusOptions[status])
+            let job = Job(
+                title: titleText,
+                company: companyText,
+                dateApplied: dateApplied,
+                notes: notesText,
+                contact: contactText,
+                favorite: favorited,
+                status: statusOptions[status]
+            )
+
             jobStore.createJob(with: job)
             presentationMode.wrappedValue.dismiss()
         }
@@ -61,8 +72,9 @@ struct JobSheetView: View {
         NavigationView {
             Form {
                 Section {
-                    TextField("Title", text: $jobTitle)
-                    TextField("Company", text: $jobCompany)
+                    TextField("Title", text: $titleText)
+                    TextField("Company", text: $companyText)
+                    TextField("Phone number or email", text: $contactText)
                 }
                 Section {
                     DatePicker("Date", selection: $dateApplied, displayedComponents: .date)
@@ -85,6 +97,10 @@ struct JobSheetView: View {
                         .pickerStyle(WheelPickerStyle())
                     }
                     Toggle("Favorite", isOn: $favorited)
+                }
+                Section(header: Text("Notes")) {
+                    TextEditor(text: $notesText)
+                        .padding(0)
                 }
             }
             .alert(isPresented: $errorAlertVisible) { errorAlert }
