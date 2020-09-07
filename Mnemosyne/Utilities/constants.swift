@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+enum Key {
+    static let jobs = "jobs"
+}

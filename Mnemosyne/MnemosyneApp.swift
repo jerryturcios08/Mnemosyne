@@ -18,6 +18,7 @@ struct MnemosyneApp: App {
                 SettingsView()
             }
             .environmentObject(jobStore)
+            .onAppear(perform: jobStore.loadJobs)
         }
     }
 }

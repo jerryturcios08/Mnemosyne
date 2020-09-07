@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Status: String {
+enum Status: String, Codable {
     case applied = "Applied"
     case phoneScreen = "Phone Screen"
     case onSite = "On Site"
@@ -15,7 +15,7 @@ enum Status: String {
     case rejected = "Rejected"
 }
 
-struct Job: Identifiable {
+struct Job: Codable, Identifiable {
     var id = UUID()
     var title: String
     var company: String
