@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C618F3A92505DFD000556CD9 /* JobSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618F3A82505DFD000556CD9 /* JobSheetView.swift */; };
-		C6B2B6B32505EE7F006E9BCA /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2B6B22505EE7F006E9BCA /* JobDetailView.swift */; };
 		C6B2B6B52505F3D9006E9BCA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2B6B42505F3D9006E9BCA /* SearchBarView.swift */; };
 		C6F2A8702505CB1E0032D31C /* MnemosyneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A86F2505CB1E0032D31C /* MnemosyneApp.swift */; };
 		C6F2A8722505CB1E0032D31C /* JobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8712505CB1E0032D31C /* JobsView.swift */; };
@@ -23,7 +22,6 @@
 
 /* Begin PBXFileReference section */
 		C618F3A82505DFD000556CD9 /* JobSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSheetView.swift; sourceTree = "<group>"; };
-		C6B2B6B22505EE7F006E9BCA /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
 		C6B2B6B42505F3D9006E9BCA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		C6F2A86C2505CB1E0032D31C /* Mnemosyne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mnemosyne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F2A86F2505CB1E0032D31C /* MnemosyneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemosyneApp.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 		C6F2A88C2505CD520032D31C /* Jobs */ = {
 			isa = PBXGroup;
 			children = (
-				C6B2B6B22505EE7F006E9BCA /* JobDetailView.swift */,
 				C618F3A82505DFD000556CD9 /* JobSheetView.swift */,
 				C6F2A8712505CB1E0032D31C /* JobsView.swift */,
 			);
@@ -217,7 +214,6 @@
 				C6F2A8722505CB1E0032D31C /* JobsView.swift in Sources */,
 				C618F3A92505DFD000556CD9 /* JobSheetView.swift in Sources */,
 				C6F2A88A2505CCC90032D31C /* constants.swift in Sources */,
-				C6B2B6B32505EE7F006E9BCA /* JobDetailView.swift in Sources */,
 				C6F2A8702505CB1E0032D31C /* MnemosyneApp.swift in Sources */,
 				C6F2A88E2505CD690032D31C /* JobsListItemView.swift in Sources */,
 			);

@@ -57,9 +57,7 @@ struct JobsView: View {
             Divider()
             LazyVStack {
                 ForEach(jobs) { job in
-                    NavigationLink(destination: JobDetailView(job: job)) {
-                        JobListItemView(job: job)
-                    }
+                    JobListItemView(job: job)
                     Divider()
                 }
             }
