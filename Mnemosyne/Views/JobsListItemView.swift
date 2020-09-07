@@ -10,14 +10,9 @@ import SwiftUI
 struct JobListItemView: View {
     // MARK: - Properties
 
-    var job: Job
+    @State private var trashAlertVisible = false
 
-    private let itemFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .medium
-        return formatter
-    }()
+    var job: Job
 
     private var statusColor: Color {
         switch job.status {
@@ -44,6 +39,7 @@ struct JobListItemView: View {
     }
 
     private func trashButtonTapped() {
+        trashAlertVisible = true
     }
 
     // MARK: - Body
@@ -63,6 +59,17 @@ struct JobListItemView: View {
             Image(systemName: "trash")
                 .font(.title3)
         }
+    }
+
+    var trashAlert: Alert {
+        Alert(
+            title: Text("Warning"),
+            message: Text("Are you sure you want to delete the \(job.title) job at \(job.company) from your list?"),
+            primaryButton: .destructive(Text("Delete"), action: {
+                // TODO: Add call to delete item from database
+            }),
+            secondaryButton: .cancel(Text("Cancel"))
+        )
     }
 
     var body: some View {
@@ -86,6 +93,7 @@ struct JobListItemView: View {
             }
             .padding(.horizontal)
         }
+        .alert(isPresented: $trashAlertVisible) { trashAlert }
     }
 }
 
