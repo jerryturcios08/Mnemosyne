@@ -13,7 +13,6 @@ struct JobSheetView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var jobStore: JobStore
 
-    // TODO: Add these fields to core data model
     @State private var jobTitle = ""
     @State private var jobCompany = ""
     @State private var dateApplied = Date()
@@ -36,7 +35,6 @@ struct JobSheetView: View {
         if jobTitle.isEmpty || jobCompany.isEmpty {
             errorAlertVisible = true
         } else {
-            // TODO: Implement call to database to add job
             let job = Job(title: jobTitle, company: jobCompany, dateApplied: dateApplied, favorite: favorited, status: statusOptions[status])
             jobStore.createJob(with: job)
             presentationMode.wrappedValue.dismiss()

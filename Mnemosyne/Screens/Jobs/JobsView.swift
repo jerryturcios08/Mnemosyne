@@ -80,11 +80,11 @@ struct JobsView: View {
 #if DEBUG
 struct JobsViewPreviews: PreviewProvider {
     static var previews: some View {
-        JobsView()
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-        JobsView()
-            .preferredColorScheme(.dark)
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        Group {
+            JobsView()
+            JobsView()
+                .preferredColorScheme(.dark)
+        }
     }
 }
 #endif

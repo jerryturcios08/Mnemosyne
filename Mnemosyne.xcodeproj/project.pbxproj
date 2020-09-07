@@ -15,8 +15,6 @@
 		C6F2A8722505CB1E0032D31C /* JobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8712505CB1E0032D31C /* JobsView.swift */; };
 		C6F2A8742505CB200032D31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F2A8732505CB200032D31C /* Assets.xcassets */; };
 		C6F2A8772505CB200032D31C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F2A8762505CB200032D31C /* Preview Assets.xcassets */; };
-		C6F2A8792505CB200032D31C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8782505CB200032D31C /* Persistence.swift */; };
-		C6F2A87C2505CB200032D31C /* Mnemosyne.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A87A2505CB200032D31C /* Mnemosyne.xcdatamodeld */; };
 		C6F2A88A2505CCC90032D31C /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8892505CCC90032D31C /* constants.swift */; };
 		C6F2A88E2505CD690032D31C /* JobsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A88D2505CD690032D31C /* JobsListItemView.swift */; };
 		C6F2A8912505CDFB0032D31C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8902505CDFB0032D31C /* SettingsView.swift */; };
@@ -32,8 +30,6 @@
 		C6F2A8712505CB1E0032D31C /* JobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsView.swift; sourceTree = "<group>"; };
 		C6F2A8732505CB200032D31C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6F2A8762505CB200032D31C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C6F2A8782505CB200032D31C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		C6F2A87B2505CB200032D31C /* Mnemosyne.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mnemosyne.xcdatamodel; sourceTree = "<group>"; };
 		C6F2A87D2505CB200032D31C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6F2A8892505CCC90032D31C /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		C6F2A88D2505CD690032D31C /* JobsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListItemView.swift; sourceTree = "<group>"; };
@@ -87,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				C6F2A8842505CB5E0032D31C /* Assets */,
-				C6F2A8832505CB4D0032D31C /* Data */,
 				C644AF262506AFB000431C04 /* Models */,
 				C6F2A8852505CB660032D31C /* Screens */,
 				C644AF2B2506B01300431C04 /* Stores */,
@@ -97,15 +92,6 @@
 				C6F2A86F2505CB1E0032D31C /* MnemosyneApp.swift */,
 			);
 			path = Mnemosyne;
-			sourceTree = "<group>";
-		};
-		C6F2A8832505CB4D0032D31C /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				C6F2A8782505CB200032D31C /* Persistence.swift */,
-				C6F2A87A2505CB200032D31C /* Mnemosyne.xcdatamodeld */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		C6F2A8842505CB5E0032D31C /* Assets */ = {
@@ -232,8 +218,6 @@
 				C6B2B6B52505F3D9006E9BCA /* SearchBarView.swift in Sources */,
 				C6F2A8912505CDFB0032D31C /* SettingsView.swift in Sources */,
 				C644AF2D2506B02C00431C04 /* JobStore.swift in Sources */,
-				C6F2A8792505CB200032D31C /* Persistence.swift in Sources */,
-				C6F2A87C2505CB200032D31C /* Mnemosyne.xcdatamodeld in Sources */,
 				C6F2A8722505CB1E0032D31C /* JobsView.swift in Sources */,
 				C618F3A92505DFD000556CD9 /* JobSheetView.swift in Sources */,
 				C6F2A88A2505CCC90032D31C /* constants.swift in Sources */,
@@ -428,19 +412,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		C6F2A87A2505CB200032D31C /* Mnemosyne.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C6F2A87B2505CB200032D31C /* Mnemosyne.xcdatamodel */,
-			);
-			currentVersion = C6F2A87B2505CB200032D31C /* Mnemosyne.xcdatamodel */;
-			path = Mnemosyne.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = C6F2A8642505CB1E0032D31C /* Project object */;
 }

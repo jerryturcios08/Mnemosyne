@@ -11,7 +11,7 @@ class JobStore: ObservableObject {
     @Published var jobs = [Job]()
 
     func createJob(with job: Job) {
-        jobs.append(job)
+        jobs.insert(job, at: 0)
     }
 
     func deleteJob(for id: UUID) {
