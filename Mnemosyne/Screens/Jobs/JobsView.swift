@@ -29,6 +29,15 @@ struct JobsView: View {
 
     private var filterOptions: [Filter] = [.title, .company, .dateApplied, .favorite]
 
+    private var filteredJobs: [Job] {
+        jobStore.jobs.filter({
+            jobSearchText.isEmpty ? true :
+                $0.title.lowercased().contains(jobSearchText.lowercased()) ||
+                $0.company.lowercased().contains(jobSearchText.lowercased()) ||
+                $0.status.rawValue.lowercased().contains(jobSearchText.lowercased())
+        })
+    }
+
     // MARK: - Methods
 
     private func addButtonTapped() {
@@ -41,7 +50,7 @@ struct JobsView: View {
         ScrollView {
             Divider()
             LazyVStack {
-                ForEach(jobStore.jobs) { job in
+                ForEach(filteredJobs) { job in
                     JobListItemView(job: job)
                     Divider()
                 }
@@ -55,17 +64,17 @@ struct JobsView: View {
             Group {
                 ZStack {
                     if jobStore.jobs.isEmpty {
-                        Text("No jobs have been found!")
+                        Text("Add a job by pressing the + button")
                             .font(.headline)
                             .foregroundColor(.gray)
                     } else {
                         scrollableContent
-                    }
-                    VStack {
-                        SearchBarView(searchText: $jobSearchText)
-                            .padding(.horizontal)
-                            .padding(.vertical, 10)
-                        Spacer()
+                        VStack {
+                            SearchBarView(searchText: $jobSearchText)
+                                .padding(.horizontal)
+                                .padding(.vertical, 10)
+                            Spacer()
+                        }
                     }
                 }
             }
