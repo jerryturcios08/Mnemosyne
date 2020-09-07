@@ -64,17 +64,26 @@ struct JobsView: View {
                 }
             }
         }
+        .padding(.top, 62)
     }
 
     var body: some View {
         NavigationView {
             Group {
-                if jobs.isEmpty {
-                    Text("No jobs have been found!")
-                        .font(.headline)
-                        .foregroundColor(.gray)
-                } else {
-                    scrollableContent
+                ZStack {
+                    if jobs.isEmpty {
+                        Text("No jobs have been found!")
+                            .font(.headline)
+                            .foregroundColor(.gray)
+                    } else {
+                        scrollableContent
+                    }
+                    VStack {
+                        SearchBarView(searchText: $jobSearchText)
+                            .padding(.horizontal)
+                            .padding(.vertical, 10)
+                        Spacer()
+                    }
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
