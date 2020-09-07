@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C618F3A92505DFD000556CD9 /* JobSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618F3A82505DFD000556CD9 /* JobSheetView.swift */; };
+		C644AF2A2506AFFE00431C04 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644AF292506AFFE00431C04 /* Job.swift */; };
+		C644AF2D2506B02C00431C04 /* JobStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644AF2C2506B02C00431C04 /* JobStore.swift */; };
 		C6B2B6B52505F3D9006E9BCA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2B6B42505F3D9006E9BCA /* SearchBarView.swift */; };
 		C6F2A8702505CB1E0032D31C /* MnemosyneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A86F2505CB1E0032D31C /* MnemosyneApp.swift */; };
 		C6F2A8722505CB1E0032D31C /* JobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8712505CB1E0032D31C /* JobsView.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		C618F3A82505DFD000556CD9 /* JobSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSheetView.swift; sourceTree = "<group>"; };
+		C644AF292506AFFE00431C04 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		C644AF2C2506B02C00431C04 /* JobStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobStore.swift; sourceTree = "<group>"; };
 		C6B2B6B42505F3D9006E9BCA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		C6F2A86C2505CB1E0032D31C /* Mnemosyne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mnemosyne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F2A86F2505CB1E0032D31C /* MnemosyneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemosyneApp.swift; sourceTree = "<group>"; };
@@ -47,6 +51,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C644AF262506AFB000431C04 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C644AF292506AFFE00431C04 /* Job.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C644AF2B2506B01300431C04 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				C644AF2C2506B02C00431C04 /* JobStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
 		C6F2A8632505CB1E0032D31C = {
 			isa = PBXGroup;
 			children = (
@@ -68,7 +88,9 @@
 			children = (
 				C6F2A8842505CB5E0032D31C /* Assets */,
 				C6F2A8832505CB4D0032D31C /* Data */,
+				C644AF262506AFB000431C04 /* Models */,
 				C6F2A8852505CB660032D31C /* Screens */,
+				C644AF2B2506B01300431C04 /* Stores */,
 				C6F2A8862505CB6B0032D31C /* Utilities */,
 				C6F2A8882505CB850032D31C /* Views */,
 				C6F2A87D2505CB200032D31C /* Info.plist */,
@@ -209,6 +231,7 @@
 			files = (
 				C6B2B6B52505F3D9006E9BCA /* SearchBarView.swift in Sources */,
 				C6F2A8912505CDFB0032D31C /* SettingsView.swift in Sources */,
+				C644AF2D2506B02C00431C04 /* JobStore.swift in Sources */,
 				C6F2A8792505CB200032D31C /* Persistence.swift in Sources */,
 				C6F2A87C2505CB200032D31C /* Mnemosyne.xcdatamodeld in Sources */,
 				C6F2A8722505CB1E0032D31C /* JobsView.swift in Sources */,
@@ -216,6 +239,7 @@
 				C6F2A88A2505CCC90032D31C /* constants.swift in Sources */,
 				C6F2A8702505CB1E0032D31C /* MnemosyneApp.swift in Sources */,
 				C6F2A88E2505CD690032D31C /* JobsListItemView.swift in Sources */,
+				C644AF2A2506AFFE00431C04 /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ import SwiftUI
 struct JobListItemView: View {
     // MARK: - Properties
 
+    @EnvironmentObject var jobStore: JobStore
     @State private var trashAlertVisible = false
 
     var job: Job
@@ -32,7 +33,7 @@ struct JobListItemView: View {
     // MARK: - Methods
 
     private func heartButtonTapped() {
-        // TODO: Change the data in the database
+        // TODO: Figure out how to implement heart feature
     }
 
     private func editButtonTapped() {
@@ -40,6 +41,12 @@ struct JobListItemView: View {
 
     private func trashButtonTapped() {
         trashAlertVisible = true
+    }
+
+    private func deleteJobFromList() {
+        withAnimation {
+            jobStore.deleteJob(for: job.id)
+        }
     }
 
     // MARK: - Body
@@ -65,9 +72,7 @@ struct JobListItemView: View {
         Alert(
             title: Text("Warning"),
             message: Text("Are you sure you want to delete the \(job.title) job at \(job.company) from your list?"),
-            primaryButton: .destructive(Text("Delete"), action: {
-                // TODO: Add call to delete item from database
-            }),
+            primaryButton: .destructive(Text("Delete"), action: deleteJobFromList),
             secondaryButton: .cancel(Text("Cancel"))
         )
     }
@@ -108,6 +113,7 @@ struct JobListItemViewPreviews: PreviewProvider {
                     title: "Software Engineer",
                     company: "Apple",
                     dateApplied: Date(),
+                    favorite: false,
                     status: .applied
                 )
             )
@@ -118,6 +124,7 @@ struct JobListItemViewPreviews: PreviewProvider {
                     title: "Product Manager",
                     company: "Affinity, Inc.",
                     dateApplied: Date(),
+                    favorite: true,
                     status: .applied
                 )
             )

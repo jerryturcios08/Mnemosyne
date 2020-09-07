@@ -9,7 +9,8 @@ import SwiftUI
 
 @main
 struct MnemosyneApp: App {
-    let persistenceController = PersistenceController.shared
+//    let persistenceController = PersistenceController.shared
+    @StateObject private var jobStore = JobStore()
 
     var body: some Scene {
         WindowGroup {
@@ -17,7 +18,8 @@ struct MnemosyneApp: App {
                 JobsView()
                 SettingsView()
             }
-            .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            .environmentObject(jobStore)
+//            .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
