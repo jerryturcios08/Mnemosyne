@@ -27,6 +27,7 @@ struct SettingsView: View {
 struct SettingsViewPreviews: PreviewProvider {
     static var previews: some View {
         SettingsView()
+            .previewDevice("iPhone SE (1st generation)")
     }
 }
 #endif

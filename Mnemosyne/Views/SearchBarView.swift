@@ -56,6 +56,7 @@ struct SearchBarViewPreviews: PreviewProvider {
                 .padding()
             SearchBarView(searchText: .constant("Apple"))
                 .preferredColorScheme(.dark)
+                .environment(\.sizeCategory, .accessibilityMedium)
                 .previewLayout(.sizeThatFits)
                 .padding()
         }

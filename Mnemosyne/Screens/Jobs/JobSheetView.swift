@@ -123,7 +123,14 @@ struct JobSheetView: View {
 #if DEBUG
 struct JobSheetViewPreviews: PreviewProvider {
     static var previews: some View {
-        JobSheetView()
+        Group {
+            JobSheetView()
+                .previewDevice("iPhone SE (1st generation)")
+            JobSheetView()
+                .preferredColorScheme(.dark)
+                .environment(\.sizeCategory, .accessibilityMedium)
+                .previewDevice("iPhone SE (1st generation)")
+        }
     }
 }
 #endif

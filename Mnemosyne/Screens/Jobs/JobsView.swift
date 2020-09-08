@@ -115,9 +115,13 @@ struct JobsViewPreviews: PreviewProvider {
     static var previews: some View {
         Group {
             JobsView()
+                .previewDevice("iPhone SE (1st generation)")
             JobsView()
                 .preferredColorScheme(.dark)
+                .environment(\.sizeCategory, .accessibilityMedium)
+                .previewDevice("iPhone SE (1st generation)")
         }
+        .environmentObject(JobStore())
     }
 }
 #endif

@@ -129,6 +129,7 @@ struct JobListItemViewPreviews: PreviewProvider {
                 )
             )
             .preferredColorScheme(.dark)
+            .environment(\.sizeCategory, .accessibilityMedium)
             .previewLayout(.sizeThatFits)
             .padding(.vertical)
         }
