@@ -53,7 +53,9 @@ struct JobsView: View {
             Divider()
             LazyVStack {
                 ForEach(filteredJobs) { job in
-                    JobListItemView(job: job)
+                    NavigationLink(destination: JobDetailView(job: job)) {
+                        JobListItemView(job: job)
+                    }
                     Divider()
                 }
             }
@@ -94,6 +96,7 @@ struct JobsView: View {
                     }
                 }
             }
+            JobDetailView(job: nil)
         }
         .tabItem {
             Image(systemName: "briefcase")
