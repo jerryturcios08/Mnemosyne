@@ -47,6 +47,9 @@ struct JobsView: View {
 
     var scrollableContent: some View {
         ScrollView {
+            SearchBarView(searchText: $jobSearchText)
+                .padding(.horizontal)
+                .padding(.top, 8)
             Divider()
             LazyVStack {
                 ForEach(filteredJobs) { job in
@@ -55,26 +58,17 @@ struct JobsView: View {
                 }
             }
         }
-        .padding(.top, 62)
     }
 
     var body: some View {
         NavigationView {
             Group {
-                ZStack {
-                    if jobStore.jobs.isEmpty {
-                        Text("Add a job by pressing the + button")
-                            .font(.headline)
-                            .foregroundColor(.gray)
-                    } else {
-                        scrollableContent
-                        VStack {
-                            SearchBarView(searchText: $jobSearchText)
-                                .padding(.horizontal)
-                                .padding(.vertical, 10)
-                            Spacer()
-                        }
-                    }
+                if jobStore.jobs.isEmpty {
+                    Text("Add a job by pressing the + button")
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                } else {
+                    scrollableContent
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
