@@ -12,7 +12,6 @@ struct JobListItemView: View {
 
     @EnvironmentObject var jobStore: JobStore
     @State private var trashAlertVisible = false
-
     var job: Job
 
     private var statusColor: Color {
@@ -36,9 +35,6 @@ struct JobListItemView: View {
         // TODO: Figure out how to implement heart feature
     }
 
-    private func editButtonTapped() {
-    }
-
     private func trashButtonTapped() {
         trashAlertVisible = true
     }
@@ -57,11 +53,7 @@ struct JobListItemView: View {
             Image(systemName: job.favorite ? "heart.fill" : "heart")
                 .font(.title3)
         }
-        Button(action: editButtonTapped) {
-            Image(systemName: "square.and.pencil")
-                .font(.title3)
-        }
-        .padding(.horizontal, 6)
+        .padding(.trailing, 8)
         Button(action: trashButtonTapped) {
             Image(systemName: "trash")
                 .font(.title3)

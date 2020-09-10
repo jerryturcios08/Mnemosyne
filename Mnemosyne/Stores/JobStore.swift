@@ -24,6 +24,16 @@ class JobStore: ObservableObject {
         }
     }
 
+    func editJob(with updatedJob: Job) {
+        for (index, job) in jobs.enumerated() {
+            if updatedJob.id == job.id {
+                jobs.remove(at: index)
+                createJob(with: updatedJob)
+                saveJobs()
+            }
+        }
+    }
+
     func saveJobs() {
         do {
             let data = try JSONEncoder().encode(jobs)

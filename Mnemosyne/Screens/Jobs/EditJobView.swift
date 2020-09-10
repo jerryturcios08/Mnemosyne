@@ -1,13 +1,13 @@
 //
-//  JobSheetView.swift
+//  EditJobView.swift
 //  Mnemosyne
 //
-//  Created by Jerry Turcios on 9/6/20.
+//  Created by Jerry Turcios on 9/10/20.
 //
 
 import SwiftUI
 
-struct JobSheetView: View {
+struct EditJobView: View {
     // MARK: - Properties
 
     @Environment(\.presentationMode) var presentationMode
@@ -16,12 +16,9 @@ struct JobSheetView: View {
     @State private var titleText = ""
     @State private var companyText = ""
     @State private var dateApplied = Date()
-    @State private var notesText = ""
     @State private var contactText = ""
-    @State private var favorited = false
     @State private var status = 0
 
-    // Alert visibility boolean values
     @State private var statusPickerVisible = false
     @State private var errorAlertVisible = false
 
@@ -37,18 +34,7 @@ struct JobSheetView: View {
         if titleText.isEmpty || companyText.isEmpty {
             errorAlertVisible = true
         } else {
-            let job = Job(
-                title: titleText,
-                company: companyText,
-                dateApplied: dateApplied,
-                notes: notesText,
-                contact: contactText,
-                favorite: favorited,
-                status: statusOptions[status]
-            )
 
-            jobStore.createJob(with: job)
-            presentationMode.wrappedValue.dismiss()
         }
     }
 
@@ -57,8 +43,6 @@ struct JobSheetView: View {
             statusPickerVisible.toggle()
         }
     }
-
-    // MARK: - Body
 
     private var errorAlert: Alert {
         Alert(
@@ -96,16 +80,11 @@ struct JobSheetView: View {
                         }
                         .pickerStyle(WheelPickerStyle())
                     }
-                    Toggle("Favorite", isOn: $favorited)
-                }
-                Section(header: Text("Notes")) {
-                    TextEditor(text: $notesText)
-                        .padding(0)
                 }
             }
             .alert(isPresented: $errorAlertVisible) { errorAlert }
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Add job")
+            .navigationTitle("Edit job")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel", action: cancelButtonTapped)
@@ -118,19 +97,10 @@ struct JobSheetView: View {
     }
 }
 
-// MARK: - Previews
-
 #if DEBUG
-struct JobSheetViewPreviews: PreviewProvider {
+struct EditJobViewPreviews: PreviewProvider {
     static var previews: some View {
-        Group {
-            JobSheetView()
-                .previewDevice("iPhone SE (1st generation)")
-            JobSheetView()
-                .preferredColorScheme(.dark)
-                .environment(\.sizeCategory, .accessibilityMedium)
-                .previewDevice("iPhone SE (1st generation)")
-        }
+        EditJobView()
     }
 }
 #endif

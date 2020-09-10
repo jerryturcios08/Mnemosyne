@@ -64,7 +64,7 @@ struct JobDetailView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(job.title)
-            .fullScreenCover(isPresented: $editScreenVisible) { Text("Hello") }
+            .fullScreenCover(isPresented: $editScreenVisible) { EditJobView() }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: editButtonTapped) {
