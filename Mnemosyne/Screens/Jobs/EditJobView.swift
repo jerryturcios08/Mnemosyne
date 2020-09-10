@@ -19,12 +19,35 @@ struct EditJobView: View {
     @State private var contactText = ""
     @State private var status = 0
 
+    // Alert visibility boolean values
     @State private var statusPickerVisible = false
     @State private var errorAlertVisible = false
 
-    private var statusOptions: [Status] = [.applied, .offer, .onSite, .phoneScreen, .rejected]
+    var job: Job
+
+    var statusOptions: [Status] = [.applied, .offer, .onSite, .phoneScreen, .rejected]
 
     // MARK: - Methods
+
+    private func configureView() {
+        titleText = job.title
+        companyText = job.company
+        dateApplied = job.dateApplied
+        contactText = job.contact ?? ""
+
+        switch job.status {
+        case .applied:
+            status = 0
+        case .offer:
+            status = 1
+        case .onSite:
+            status = 2
+        case .phoneScreen:
+            status = 3
+        case .rejected:
+            status = 4
+        }
+    }
 
     private func cancelButtonTapped() {
         presentationMode.wrappedValue.dismiss()
@@ -34,7 +57,19 @@ struct EditJobView: View {
         if titleText.isEmpty || companyText.isEmpty {
             errorAlertVisible = true
         } else {
+            let updatedJob = Job(
+                id: job.id,
+                title: titleText,
+                company: companyText,
+                dateApplied: dateApplied,
+                notes: job.notes,
+                contact: contactText,
+                favorite: job.favorite,
+                status: statusOptions[status]
+            )
 
+            jobStore.editJob(with: updatedJob)
+            presentationMode.wrappedValue.dismiss()
         }
     }
 
@@ -94,13 +129,22 @@ struct EditJobView: View {
                 }
             }
         }
+        .onAppear(perform: configureView)
     }
 }
 
 #if DEBUG
 struct EditJobViewPreviews: PreviewProvider {
     static var previews: some View {
-        EditJobView()
+        EditJobView(
+            job: Job(
+                title: "Software Engineer",
+                company: "Apple",
+                dateApplied: Date(),
+                favorite: false,
+                status: .applied
+            )
+        )
     }
 }
 #endif

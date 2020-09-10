@@ -54,6 +54,14 @@ struct JobDetailView: View {
                         Text(job.company)
                             .foregroundColor(.gray)
                     }
+                    if let contact = job.contact {
+                        HStack {
+                            Text("Contact")
+                            Spacer()
+                            Text(contact)
+                                .foregroundColor(.gray)
+                        }
+                    }
                     HStack {
                         Text("Status")
                         Spacer()
@@ -64,7 +72,7 @@ struct JobDetailView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(job.title)
-            .fullScreenCover(isPresented: $editScreenVisible) { EditJobView() }
+            .fullScreenCover(isPresented: $editScreenVisible) { EditJobView(job: job) }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: editButtonTapped) {
