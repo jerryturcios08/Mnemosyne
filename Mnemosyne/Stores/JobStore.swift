@@ -27,8 +27,16 @@ class JobStore: ObservableObject {
     func editJob(with updatedJob: Job) {
         for (index, job) in jobs.enumerated() {
             if updatedJob.id == job.id {
-                jobs.remove(at: index)
-                createJob(with: updatedJob)
+                jobs[index] = updatedJob
+                saveJobs()
+            }
+        }
+    }
+
+    func toggleFavorite(for id: UUID) {
+        for (index, job) in jobs.enumerated() {
+            if id == job.id {
+                jobs[index].favorite.toggle()
                 saveJobs()
             }
         }
