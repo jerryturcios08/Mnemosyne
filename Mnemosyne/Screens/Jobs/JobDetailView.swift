@@ -10,7 +10,9 @@ import SwiftUI
 struct JobDetailView: View {
     // MARK: - Properties
 
+    @EnvironmentObject var jobStore: JobStore
     @State private var editScreenVisible = false
+
     var job: Job?
 
     private var statusColor: Color {
@@ -34,6 +36,11 @@ struct JobDetailView: View {
 
     private func editButtonTapped() {
         editScreenVisible = true
+    }
+
+    private func heartButtonTapped() {
+        guard let job = job else { return }
+        jobStore.toggleFavorite(for: job.id)
     }
 
     // MARK: - Body
@@ -80,7 +87,7 @@ struct JobDetailView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {}) {
+                    Button(action: heartButtonTapped) {
                         Image(systemName: job.favorite ? "heart.fill" : "heart")
                     }
                 }

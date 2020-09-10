@@ -32,7 +32,7 @@ struct JobListItemView: View {
     // MARK: - Methods
 
     private func heartButtonTapped() {
-        // TODO: Figure out how to implement heart feature
+        jobStore.toggleFavorite(for: job.id)
     }
 
     private func trashButtonTapped() {
