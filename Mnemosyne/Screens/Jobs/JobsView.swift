@@ -22,9 +22,7 @@ struct JobsView: View {
     @EnvironmentObject var jobStore: JobStore
     @State private var jobSearchText = ""
     @State private var selectedFilterOption = 3
-
-    // Alert visibility boolean values
-    @State private var jobSheetVisible = false
+    @State private var jobScreenVisible = false
 
     private var filterOptions: [Filter] = [.title, .company, .dateApplied, .favorite]
 
@@ -40,7 +38,7 @@ struct JobsView: View {
     // MARK: - Methods
 
     private func addButtonTapped() {
-        jobSheetVisible = true
+        jobScreenVisible = true
     }
 
     // MARK: - Body
@@ -75,7 +73,7 @@ struct JobsView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Jobs")
-            .fullScreenCover(isPresented: $jobSheetVisible) { JobSheetView() }
+            .fullScreenCover(isPresented: $jobScreenVisible) { JobSheetView() }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Menu {
