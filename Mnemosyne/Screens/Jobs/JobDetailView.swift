@@ -8,16 +8,75 @@
 import SwiftUI
 
 struct JobDetailView: View {
+    // MARK: - Properties
+
+    @State private var editScreenVisible = false
     var job: Job?
+
+    private var statusColor: Color {
+        switch job?.status {
+        case .applied:
+            return Color.green
+        case .offer:
+            return Color.blue
+        case .onSite:
+            return Color.purple
+        case .phoneScreen:
+            return Color.orange
+        case .rejected:
+            return Color.red
+        case .none:
+            return Color.gray
+        }
+    }
+
+    // MARK: - Methods
+
+    private func editButtonTapped() {
+        editScreenVisible = true
+    }
+
+    // MARK: - Body
 
     var body: some View {
         if let job = job {
-            VStack {
-                Text(job.title)
-                Text(job.company)
+            Form {
+                Section {
+                    HStack {
+                        Text("Title")
+                        Spacer()
+                        Text(job.title)
+                            .foregroundColor(.gray)
+                    }
+                    HStack {
+                        Text("Company")
+                        Spacer()
+                        Text(job.company)
+                            .foregroundColor(.gray)
+                    }
+                    HStack {
+                        Text("Status")
+                        Spacer()
+                        Text(job.status.rawValue)
+                            .foregroundColor(statusColor)
+                    }
+                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(job.title)
+            .fullScreenCover(isPresented: $editScreenVisible) { Text("Hello") }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: editButtonTapped) {
+                        Image(systemName: "square.and.pencil")
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {}) {
+                        Image(systemName: job.favorite ? "heart.fill" : "heart")
+                    }
+                }
+            }
         } else {
             VStack {
                 Text("No job is selected.")
@@ -28,7 +87,10 @@ struct JobDetailView: View {
     }
 }
 
-struct JobDetailView_Previews: PreviewProvider {
+// MARK: - Previews
+
+#if DEBUG
+struct JobDetailViewPreviews: PreviewProvider {
     static var previews: some View {
         JobDetailView(
             job: Job(
@@ -41,3 +103,4 @@ struct JobDetailView_Previews: PreviewProvider {
         )
     }
 }
+#endif
