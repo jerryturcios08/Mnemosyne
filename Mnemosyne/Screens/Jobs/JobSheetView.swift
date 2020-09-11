@@ -99,7 +99,10 @@ struct JobSheetView: View {
                     Toggle("Favorite", isOn: $favorited)
                 }
                 Section(header: Text("Notes")) {
-                    TextEditor(text: $notesText)
+                    ZStack {
+                        TextEditor(text: $notesText)
+                        Text(notesText).opacity(0).padding(.all, 8)
+                    }
                 }
             }
             .alert(isPresented: $errorAlertVisible) { errorAlert }
