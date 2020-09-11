@@ -33,6 +33,15 @@ class JobStore: ObservableObject {
         }
     }
 
+    func editJobNotes(with notes: String, for id: UUID) {
+        for (index, job) in jobs.enumerated() {
+            if id == job.id {
+                jobs[index].notes = notes
+                saveJobs()
+            }
+        }
+    }
+
     func toggleFavorite(for id: UUID) {
         for (index, job) in jobs.enumerated() {
             if id == job.id {

@@ -55,6 +55,13 @@ struct JobDetailView: View {
         jobStore.toggleFavorite(for: job.id)
     }
 
+    private func handleNotesChange<V>(_ value: V) {
+        guard let id = job?.id else { return }
+        guard let updatedNotes = value as? String else { return }
+
+        jobStore.editJobNotes(with: updatedNotes, for: id)
+    }
+
     // MARK: - Body
 
     func getRowContent(header: String, value: String, color: Color) -> some View {
@@ -86,6 +93,7 @@ struct JobDetailView: View {
             .navigationTitle(job.title)
             .fullScreenCover(isPresented: $editScreenVisible) { EditJobView(job: job) }
             .onAppear(perform: configureView)
+            .onChange(of: notesText, perform: handleNotesChange)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: editButtonTapped) {
