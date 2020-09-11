@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C618F3A92505DFD000556CD9 /* JobSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618F3A82505DFD000556CD9 /* JobSheetView.swift */; };
+		C618F3A92505DFD000556CD9 /* AddJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618F3A82505DFD000556CD9 /* AddJobView.swift */; };
 		C644AF2A2506AFFE00431C04 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644AF292506AFFE00431C04 /* Job.swift */; };
 		C644AF2D2506B02C00431C04 /* JobStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644AF2C2506B02C00431C04 /* JobStore.swift */; };
 		C6AB1B6B250ACA12009CE6BE /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AB1B6A250ACA12009CE6BE /* JobDetailView.swift */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C618F3A82505DFD000556CD9 /* JobSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSheetView.swift; sourceTree = "<group>"; };
+		C618F3A82505DFD000556CD9 /* AddJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobView.swift; sourceTree = "<group>"; };
 		C644AF292506AFFE00431C04 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		C644AF2C2506B02C00431C04 /* JobStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobStore.swift; sourceTree = "<group>"; };
 		C6AB1B6A250ACA12009CE6BE /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
@@ -136,9 +136,9 @@
 		C6F2A88C2505CD520032D31C /* Jobs */ = {
 			isa = PBXGroup;
 			children = (
+				C618F3A82505DFD000556CD9 /* AddJobView.swift */,
 				C6AB1B6C250AD17D009CE6BE /* EditJobView.swift */,
 				C6AB1B6A250ACA12009CE6BE /* JobDetailView.swift */,
-				C618F3A82505DFD000556CD9 /* JobSheetView.swift */,
 				C6F2A8712505CB1E0032D31C /* JobsView.swift */,
 			);
 			path = Jobs;
@@ -227,7 +227,7 @@
 				C6AB1B6B250ACA12009CE6BE /* JobDetailView.swift in Sources */,
 				C6F2A8722505CB1E0032D31C /* JobsView.swift in Sources */,
 				C6AB1B6D250AD17D009CE6BE /* EditJobView.swift in Sources */,
-				C618F3A92505DFD000556CD9 /* JobSheetView.swift in Sources */,
+				C618F3A92505DFD000556CD9 /* AddJobView.swift in Sources */,
 				C6F2A88A2505CCC90032D31C /* constants.swift in Sources */,
 				C6F2A8702505CB1E0032D31C /* MnemosyneApp.swift in Sources */,
 				C6F2A88E2505CD690032D31C /* JobsListItemView.swift in Sources */,

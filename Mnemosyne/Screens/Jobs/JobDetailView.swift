@@ -13,7 +13,7 @@ struct JobDetailView: View {
     @EnvironmentObject var jobStore: JobStore
 
     @State private var notesText = ""
-    @State private var editScreenVisible = false
+    @State private var editJobScreenVisible = false
 
     var job: Job?
 
@@ -47,7 +47,7 @@ struct JobDetailView: View {
     }
 
     private func editButtonTapped() {
-        editScreenVisible = true
+        editJobScreenVisible = true
     }
 
     private func heartButtonTapped() {
@@ -94,7 +94,7 @@ struct JobDetailView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(job.title)
-            .fullScreenCover(isPresented: $editScreenVisible) { EditJobView(job: job) }
+            .fullScreenCover(isPresented: $editJobScreenVisible) { EditJobView(job: job) }
             .onAppear(perform: configureView)
             .onChange(of: notesText, perform: handleNotesChange)
             .toolbar {

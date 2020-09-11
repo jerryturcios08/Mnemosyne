@@ -1,5 +1,5 @@
 //
-//  JobSheetView.swift
+//  AddJobView.swift
 //  Mnemosyne
 //
 //  Created by Jerry Turcios on 9/6/20.
@@ -123,7 +123,7 @@ struct AddJobView: View {
 // MARK: - Previews
 
 #if DEBUG
-struct JobSheetViewPreviews: PreviewProvider {
+struct AddJobViewPreviews: PreviewProvider {
     static var previews: some View {
         Group {
             AddJobView()
