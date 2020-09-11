@@ -86,7 +86,10 @@ struct JobDetailView: View {
                     getRowContent(header: "Date applied", value: dateString, color: .gray)
                 }
                 Section(header: Text("Notes")) {
-                    TextEditor(text: $notesText)
+                    ZStack {
+                        TextEditor(text: $notesText)
+                        Text(notesText).opacity(0).padding(.all, 8)
+                    }
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
