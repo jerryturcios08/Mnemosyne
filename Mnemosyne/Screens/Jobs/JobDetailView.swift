@@ -11,6 +11,8 @@ struct JobDetailView: View {
     // MARK: - Properties
 
     @EnvironmentObject var jobStore: JobStore
+
+    @State private var notesText = ""
     @State private var editScreenVisible = false
 
     var job: Job?
@@ -32,7 +34,17 @@ struct JobDetailView: View {
         }
     }
 
+    private var dateString: String {
+        guard let dateApplied = job?.dateApplied else { return "N/a" }
+        return DateFormatter.localizedString(from: dateApplied, dateStyle: .long, timeStyle: .none)
+    }
+
     // MARK: - Methods
+
+    private func configureView() {
+        guard let notes = job?.notes else { return }
+        notesText = notes
+    }
 
     private func editButtonTapped() {
         editScreenVisible = true
@@ -45,41 +57,35 @@ struct JobDetailView: View {
 
     // MARK: - Body
 
+    func getRowContent(header: String, value: String, color: Color) -> some View {
+        HStack {
+            Text(header)
+            Spacer()
+            Text(value)
+                .foregroundColor(color)
+        }
+    }
+
     var body: some View {
         if let job = job {
             Form {
                 Section {
-                    HStack {
-                        Text("Title")
-                        Spacer()
-                        Text(job.title)
-                            .foregroundColor(.gray)
-                    }
-                    HStack {
-                        Text("Company")
-                        Spacer()
-                        Text(job.company)
-                            .foregroundColor(.gray)
-                    }
+                    getRowContent(header: "Title", value: job.title, color: .gray)
+                    getRowContent(header: "Company", value: job.company, color: .gray)
                     if let contact = job.contact {
-                        HStack {
-                            Text("Contact")
-                            Spacer()
-                            Text(contact)
-                                .foregroundColor(.gray)
-                        }
+                        getRowContent(header: "Contact", value: contact, color: .gray)
                     }
-                    HStack {
-                        Text("Status")
-                        Spacer()
-                        Text(job.status.rawValue)
-                            .foregroundColor(statusColor)
-                    }
+                    getRowContent(header: "Status", value: job.status.rawValue, color: statusColor)
+                    getRowContent(header: "Date applied", value: dateString, color: .gray)
+                }
+                Section(header: Text("Notes")) {
+                    TextEditor(text: $notesText)
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(job.title)
             .fullScreenCover(isPresented: $editScreenVisible) { EditJobView(job: job) }
+            .onAppear(perform: configureView)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: editButtonTapped) {

@@ -100,7 +100,6 @@ struct JobSheetView: View {
                 }
                 Section(header: Text("Notes")) {
                     TextEditor(text: $notesText)
-                        .padding(0)
                 }
             }
             .alert(isPresented: $errorAlertVisible) { errorAlert }
