@@ -101,7 +101,9 @@ struct AddJobView: View {
                 Section(header: Text("Notes")) {
                     ZStack {
                         TextEditor(text: $notesText)
-                        Text(notesText).opacity(0).padding(.all, 8)
+                        Text(notesText)
+                            .opacity(0)
+                            .padding(.all, 8)
                     }
                 }
             }
