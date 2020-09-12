@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-// TODO: Implemenet filter functionality
+// TODO: Implemenet sorting functionality
 
-fileprivate enum Filter: String {
+fileprivate enum Sort: String {
     case title = "Title name"
     case company = "Company name"
     case dateApplied = "Date applied"
@@ -24,7 +24,7 @@ struct JobsView: View {
     @State private var selectedFilterOption = 3
     @State private var addJobScreenVisible = false
 
-    private var filterOptions: [Filter] = [.title, .company, .dateApplied, .favorite]
+    private var sortingOptions: [Sort] = [.title, .company, .dateApplied, .favorite]
 
     private var filteredJobs: [Job] {
         jobStore.jobs.filter({
@@ -78,10 +78,10 @@ struct JobsView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Menu {
                         Picker("Filter options", selection: $selectedFilterOption) {
-                            Text(filterOptions[0].rawValue).tag(0)
-                            Text(filterOptions[1].rawValue).tag(1)
-                            Text(filterOptions[2].rawValue).tag(2)
-                            Text(filterOptions[3].rawValue).tag(3)
+                            Text(sortingOptions[0].rawValue).tag(0)
+                            Text(sortingOptions[1].rawValue).tag(1)
+                            Text(sortingOptions[2].rawValue).tag(2)
+                            Text(sortingOptions[3].rawValue).tag(3)
                         }
                     } label: {
                         Image(systemName: "slider.horizontal.3")

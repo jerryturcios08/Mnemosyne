@@ -18,7 +18,7 @@
 		C6F2A8742505CB200032D31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F2A8732505CB200032D31C /* Assets.xcassets */; };
 		C6F2A8772505CB200032D31C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F2A8762505CB200032D31C /* Preview Assets.xcassets */; };
 		C6F2A88A2505CCC90032D31C /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8892505CCC90032D31C /* constants.swift */; };
-		C6F2A88E2505CD690032D31C /* JobsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A88D2505CD690032D31C /* JobsListItemView.swift */; };
+		C6F2A88E2505CD690032D31C /* JobListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A88D2505CD690032D31C /* JobListItemView.swift */; };
 		C6F2A8912505CDFB0032D31C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8902505CDFB0032D31C /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		C6F2A8762505CB200032D31C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C6F2A87D2505CB200032D31C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6F2A8892505CCC90032D31C /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
-		C6F2A88D2505CD690032D31C /* JobsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListItemView.swift; sourceTree = "<group>"; };
+		C6F2A88D2505CD690032D31C /* JobListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListItemView.swift; sourceTree = "<group>"; };
 		C6F2A8902505CDFB0032D31C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,7 +127,7 @@
 		C6F2A8882505CB850032D31C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C6F2A88D2505CD690032D31C /* JobsListItemView.swift */,
+				C6F2A88D2505CD690032D31C /* JobListItemView.swift */,
 				C6B2B6B42505F3D9006E9BCA /* SearchBarView.swift */,
 			);
 			path = Views;
@@ -230,7 +230,7 @@
 				C618F3A92505DFD000556CD9 /* AddJobView.swift in Sources */,
 				C6F2A88A2505CCC90032D31C /* constants.swift in Sources */,
 				C6F2A8702505CB1E0032D31C /* MnemosyneApp.swift in Sources */,
-				C6F2A88E2505CD690032D31C /* JobsListItemView.swift in Sources */,
+				C6F2A88E2505CD690032D31C /* JobListItemView.swift in Sources */,
 				C644AF2A2506AFFE00431C04 /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
