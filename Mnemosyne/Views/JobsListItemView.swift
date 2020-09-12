@@ -70,27 +70,25 @@ struct JobListItemView: View {
     }
 
     var body: some View {
-        VStack {
-            HStack {
-                // TODO: Look into using Crunchbase API to provide images
-                VStack(alignment: .leading) {
-                    Text("\(job.title)")
-                        .font(.body)
-                        .fontWeight(.bold)
-                        .foregroundColor(.primary)
-                    Text("\(job.company)")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                    Text("\(job.status.rawValue)")
-                        .font(.subheadline)
-                        .foregroundColor(statusColor)
-                }
-                Spacer()
-                actionGroup
+        HStack {
+            // TODO: Look into using Crunchbase API to provide images
+            VStack(alignment: .leading) {
+                Text("\(job.title)")
+                    .font(.body)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                Text("\(job.company)")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+                Text("\(job.status.rawValue)")
+                    .font(.subheadline)
+                    .foregroundColor(statusColor)
             }
-            .padding(.horizontal)
+            Spacer()
+            actionGroup
         }
         .alert(isPresented: $trashAlertVisible) { trashAlert }
+        .padding(.horizontal)
     }
 }
 
