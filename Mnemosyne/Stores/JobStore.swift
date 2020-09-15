@@ -8,7 +8,11 @@
 import SwiftUI
 
 class JobStore: ObservableObject {
+    // MARK: - Properties
+
     @Published var jobs = [Job]()
+
+    // MARK: - Methods
 
     func createJob(with job: Job) {
         jobs.insert(job, at: 0)
@@ -50,6 +54,8 @@ class JobStore: ObservableObject {
             }
         }
     }
+
+    // MARK: - Local storage
 
     func saveJobs() {
         do {

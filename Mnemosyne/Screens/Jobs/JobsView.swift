@@ -47,7 +47,8 @@ struct JobsView: View {
         ScrollView {
             SearchBarView(searchText: $jobSearchText)
                 .padding(.horizontal)
-                .padding(.top, 8)
+                .padding(.top, 12)
+                .padding(.bottom, 4)
             Divider()
             LazyVStack {
                 ForEach(filteredJobs) { job in

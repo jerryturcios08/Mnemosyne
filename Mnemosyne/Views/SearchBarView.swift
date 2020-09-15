@@ -35,14 +35,15 @@ struct SearchBarView: View {
                     }
                 }
             }
-            .padding(10)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 8)
             .background(Color(.systemGray6))
             .cornerRadius(10)
-//            if editing {
-//                Button("Cancel", action: cancelButtonTapped)
-//                    .transition(.move(edge: .trailing))
-//                    .animation(.default)
-//            }
+            if editing {
+                Button("Cancel", action: cancelButtonTapped)
+                    .transition(.move(edge: .trailing))
+                    .animation(.default)
+            }
         }
     }
 }
