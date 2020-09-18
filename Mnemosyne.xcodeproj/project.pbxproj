@@ -13,6 +13,8 @@
 		C6AB1B6B250ACA12009CE6BE /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AB1B6A250ACA12009CE6BE /* JobDetailView.swift */; };
 		C6AB1B6D250AD17D009CE6BE /* EditJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AB1B6C250AD17D009CE6BE /* EditJobView.swift */; };
 		C6B2B6B52505F3D9006E9BCA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2B6B42505F3D9006E9BCA /* SearchBarView.swift */; };
+		C6C899BB2511652F006BA53A /* MnemosyneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C899BA2511652F006BA53A /* MnemosyneTests.swift */; };
+		C6C899C62511654E006BA53A /* JobStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C899C52511654E006BA53A /* JobStoreTests.swift */; };
 		C6F2A8702505CB1E0032D31C /* MnemosyneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A86F2505CB1E0032D31C /* MnemosyneApp.swift */; };
 		C6F2A8722505CB1E0032D31C /* JobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8712505CB1E0032D31C /* JobsView.swift */; };
 		C6F2A8742505CB200032D31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F2A8732505CB200032D31C /* Assets.xcassets */; };
@@ -22,6 +24,16 @@
 		C6F2A8912505CDFB0032D31C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8902505CDFB0032D31C /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C6C899BD2511652F006BA53A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6F2A8642505CB1E0032D31C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6F2A86B2505CB1E0032D31C;
+			remoteInfo = Mnemosyne;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		C618F3A82505DFD000556CD9 /* AddJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobView.swift; sourceTree = "<group>"; };
 		C644AF292506AFFE00431C04 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
@@ -29,6 +41,10 @@
 		C6AB1B6A250ACA12009CE6BE /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
 		C6AB1B6C250AD17D009CE6BE /* EditJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditJobView.swift; sourceTree = "<group>"; };
 		C6B2B6B42505F3D9006E9BCA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		C6C899B82511652F006BA53A /* MnemosyneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MnemosyneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6C899BA2511652F006BA53A /* MnemosyneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemosyneTests.swift; sourceTree = "<group>"; };
+		C6C899BC2511652F006BA53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6C899C52511654E006BA53A /* JobStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobStoreTests.swift; sourceTree = "<group>"; };
 		C6F2A86C2505CB1E0032D31C /* Mnemosyne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mnemosyne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F2A86F2505CB1E0032D31C /* MnemosyneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemosyneApp.swift; sourceTree = "<group>"; };
 		C6F2A8712505CB1E0032D31C /* JobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsView.swift; sourceTree = "<group>"; };
@@ -41,6 +57,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C6C899B52511652F006BA53A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C6F2A8692505CB1E0032D31C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -67,10 +90,29 @@
 			path = Stores;
 			sourceTree = "<group>";
 		};
+		C6C899B92511652F006BA53A /* MnemosyneTests */ = {
+			isa = PBXGroup;
+			children = (
+				C6C899C425116538006BA53A /* Stores */,
+				C6C899BA2511652F006BA53A /* MnemosyneTests.swift */,
+				C6C899BC2511652F006BA53A /* Info.plist */,
+			);
+			path = MnemosyneTests;
+			sourceTree = "<group>";
+		};
+		C6C899C425116538006BA53A /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				C6C899C52511654E006BA53A /* JobStoreTests.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
 		C6F2A8632505CB1E0032D31C = {
 			isa = PBXGroup;
 			children = (
 				C6F2A86E2505CB1E0032D31C /* Mnemosyne */,
+				C6C899B92511652F006BA53A /* MnemosyneTests */,
 				C6F2A86D2505CB1E0032D31C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				C6F2A86C2505CB1E0032D31C /* Mnemosyne.app */,
+				C6C899B82511652F006BA53A /* MnemosyneTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +198,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C6C899B72511652F006BA53A /* MnemosyneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6C899C12511652F006BA53A /* Build configuration list for PBXNativeTarget "MnemosyneTests" */;
+			buildPhases = (
+				C6C899B42511652F006BA53A /* Sources */,
+				C6C899B52511652F006BA53A /* Frameworks */,
+				C6C899B62511652F006BA53A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6C899BE2511652F006BA53A /* PBXTargetDependency */,
+			);
+			name = MnemosyneTests;
+			productName = MnemosyneTests;
+			productReference = C6C899B82511652F006BA53A /* MnemosyneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C6F2A86B2505CB1E0032D31C /* Mnemosyne */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6F2A8802505CB200032D31C /* Build configuration list for PBXNativeTarget "Mnemosyne" */;
@@ -181,6 +242,10 @@
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					C6C899B72511652F006BA53A = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = C6F2A86B2505CB1E0032D31C;
+					};
 					C6F2A86B2505CB1E0032D31C = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -200,11 +265,19 @@
 			projectRoot = "";
 			targets = (
 				C6F2A86B2505CB1E0032D31C /* Mnemosyne */,
+				C6C899B72511652F006BA53A /* MnemosyneTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C6C899B62511652F006BA53A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C6F2A86A2505CB1E0032D31C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,6 +290,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C6C899B42511652F006BA53A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6C899BB2511652F006BA53A /* MnemosyneTests.swift in Sources */,
+				C6C899C62511654E006BA53A /* JobStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C6F2A8682505CB1E0032D31C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,7 +319,55 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C6C899BE2511652F006BA53A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6F2A86B2505CB1E0032D31C /* Mnemosyne */;
+			targetProxy = C6C899BD2511652F006BA53A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		C6C899BF2511652F006BA53A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DU8BZ7Q774;
+				INFOPLIST_FILE = MnemosyneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jerryturcios.MnemosyneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mnemosyne.app/Mnemosyne";
+			};
+			name = Debug;
+		};
+		C6C899C02511652F006BA53A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DU8BZ7Q774;
+				INFOPLIST_FILE = MnemosyneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jerryturcios.MnemosyneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mnemosyne.app/Mnemosyne";
+			};
+			name = Release;
+		};
 		C6F2A87E2505CB200032D31C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -401,6 +531,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C6C899C12511652F006BA53A /* Build configuration list for PBXNativeTarget "MnemosyneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6C899BF2511652F006BA53A /* Debug */,
+				C6C899C02511652F006BA53A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C6F2A8672505CB1E0032D31C /* Build configuration list for PBXProject "Mnemosyne" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
