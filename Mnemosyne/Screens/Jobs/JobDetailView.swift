@@ -64,7 +64,22 @@ struct JobDetailView: View {
 
     // MARK: - Body
 
-    func getRowContent(header: String, value: String, color: Color) -> some View {
+    private func getNavigationBarItems(job: Job) -> some ToolbarContent {
+        Group {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: editButtonTapped) {
+                    Image(systemName: "square.and.pencil")
+                }
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: heartButtonTapped) {
+                    Image(systemName: job.favorite ? "heart.fill" : "heart")
+                }
+            }
+        }
+    }
+
+    private func getRowContent(header: String, value: String, color: Color) -> some View {
         HStack {
             Text(header)
             Spacer()
@@ -99,18 +114,7 @@ struct JobDetailView: View {
             .fullScreenCover(isPresented: $editJobScreenVisible) { EditJobView(job: job) }
             .onAppear(perform: configureView)
             .onChange(of: notesText, perform: handleNotesChange)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: editButtonTapped) {
-                        Image(systemName: "square.and.pencil")
-                    }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: heartButtonTapped) {
-                        Image(systemName: job.favorite ? "heart.fill" : "heart")
-                    }
-                }
-            }
+            .toolbar { getNavigationBarItems(job: job) }
         } else {
             VStack {
                 Text("No job is selected.")

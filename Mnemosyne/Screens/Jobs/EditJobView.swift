@@ -79,12 +79,25 @@ struct EditJobView: View {
         }
     }
 
+    // MARK: - Body
+
     private var errorAlert: Alert {
         Alert(
             title: Text("Error"),
             message: Text("A job title and company name is needed to add a new job. Please enter them and try again."),
             dismissButton: .default(Text("Okay"))
         )
+    }
+
+    private var navigationBarItems: some ToolbarContent {
+        Group {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button("Cancel", action: cancelButtonTapped)
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Done", action: doneButtonTapped)
+            }
+        }
     }
 
     var body: some View {
@@ -120,14 +133,7 @@ struct EditJobView: View {
             .alert(isPresented: $errorAlertVisible) { errorAlert }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Edit job")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel", action: cancelButtonTapped)
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done", action: doneButtonTapped)
-                }
-            }
+            .toolbar { navigationBarItems }
         }
         .onAppear(perform: configureView)
     }

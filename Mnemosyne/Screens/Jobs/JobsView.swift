@@ -43,7 +43,30 @@ struct JobsView: View {
 
     // MARK: - Body
 
-    var scrollableContent: some View {
+    private var navigationBarItems: some ToolbarContent {
+        Group {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Menu {
+                    Picker("Filter options", selection: $selectedFilterOption) {
+                        Text(sortingOptions[0].rawValue).tag(0)
+                        Text(sortingOptions[1].rawValue).tag(1)
+                        Text(sortingOptions[2].rawValue).tag(2)
+                        Text(sortingOptions[3].rawValue).tag(3)
+                    }
+                } label: {
+                    Image(systemName: "slider.horizontal.3")
+                        .font(.title3)
+                }
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: addButtonTapped) {
+                    Image(systemName: "plus")
+                }
+            }
+        }
+    }
+
+    private var scrollableContent: some View {
         ScrollView {
             SearchBarView(searchText: $jobSearchText)
                 .padding(.horizontal)
@@ -75,26 +98,7 @@ struct JobsView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Jobs")
             .fullScreenCover(isPresented: $addJobScreenVisible) { AddJobView() }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Menu {
-                        Picker("Filter options", selection: $selectedFilterOption) {
-                            Text(sortingOptions[0].rawValue).tag(0)
-                            Text(sortingOptions[1].rawValue).tag(1)
-                            Text(sortingOptions[2].rawValue).tag(2)
-                            Text(sortingOptions[3].rawValue).tag(3)
-                        }
-                    } label: {
-                        Image(systemName: "slider.horizontal.3")
-                            .font(.title3)
-                    }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: addButtonTapped) {
-                        Image(systemName: "plus")
-                    }
-                }
-            }
+            .toolbar { navigationBarItems }
             JobDetailView(job: nil)
         }
         .tabItem {

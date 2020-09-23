@@ -68,6 +68,17 @@ struct AddJobView: View {
         )
     }
 
+    private var navigationBarItems: some ToolbarContent {
+        Group {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button("Cancel", action: cancelButtonTapped)
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Done", action: doneButtonTapped)
+            }
+        }
+    }
+
     var body: some View {
         NavigationView {
             Form {
@@ -110,14 +121,7 @@ struct AddJobView: View {
             .alert(isPresented: $errorAlertVisible) { errorAlert }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Add job")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel", action: cancelButtonTapped)
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done", action: doneButtonTapped)
-                }
-            }
+            .toolbar { navigationBarItems }
         }
     }
 }
