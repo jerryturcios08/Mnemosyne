@@ -91,6 +91,8 @@ struct JobsView: View {
                     Text("Add a job by pressing the + button")
                         .font(.headline)
                         .foregroundColor(.gray)
+                        .multilineTextAlignment(.center)
+                        .padding()
                 } else {
                     scrollableContent
                 }

@@ -22,7 +22,7 @@ struct SearchBarView: View {
     }
 
     var body: some View {
-        HStack {
+        Group {
             HStack {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.gray)
