@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct SearchBarView: View {
+    // MARK: - Properties
+
     @Binding var searchText: String
     @State private var editing = false
+
+    // MARK: - Methods
 
     private func cancelButtonTapped() {
         editing = false
@@ -21,8 +25,10 @@ struct SearchBarView: View {
         editing = true
     }
 
+    // MARK: - Body
+
     var body: some View {
-        Group {
+        HStack {
             HStack {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.gray)
@@ -47,6 +53,8 @@ struct SearchBarView: View {
         }
     }
 }
+
+// MARK: - Previews
 
 #if DEBUG
 struct SearchBarViewPreviews: PreviewProvider {
