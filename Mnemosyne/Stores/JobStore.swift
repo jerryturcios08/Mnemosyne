@@ -7,15 +7,23 @@
 
 import SwiftUI
 
+enum Sort: String {
+    case title = "Title name"
+    case company = "Company name"
+    case recentlyApplied = "Recently applied"
+}
+
 class JobStore: ObservableObject {
     // MARK: - Properties
 
     @Published var jobs = [Job]()
+    @Published var sorting = Sort.title
 
     // MARK: - Methods
 
     func createJob(with job: Job) {
         jobs.insert(job, at: 0)
+        sortJobs(by: sorting)
         saveJobs()
     }
 
@@ -32,6 +40,7 @@ class JobStore: ObservableObject {
         for (index, job) in jobs.enumerated() {
             if updatedJob.id == job.id {
                 jobs[index] = updatedJob
+                sortJobs(by: sorting)
                 saveJobs()
             }
         }
@@ -55,6 +64,20 @@ class JobStore: ObservableObject {
         }
     }
 
+    func sortJobs(by sort: Sort) {
+        switch sort {
+        case .title:
+            jobs.sort(by: { $0.title.lowercased() < $1.title.lowercased() })
+            sorting = .title
+        case .company:
+            jobs.sort(by: { $0.company.lowercased() < $1.company.lowercased() })
+            sorting = .company
+        case .recentlyApplied:
+            jobs.sort(by: { $0.dateApplied > $1.dateApplied })
+            sorting = .recentlyApplied
+        }
+    }
+
     // MARK: - Local storage
 
     func saveJobs() {
@@ -71,6 +94,7 @@ class JobStore: ObservableObject {
 
         do {
             jobs = try JSONDecoder().decode([Job].self, from: savedData)
+            sortJobs(by: sorting)
         } catch {
             fatalError(error.localizedDescription)
         }

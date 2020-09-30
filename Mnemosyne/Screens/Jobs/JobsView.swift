@@ -7,24 +7,15 @@
 
 import SwiftUI
 
-// TODO: Implemenet sorting functionality
-
-fileprivate enum Sort: String {
-    case title = "Title name"
-    case company = "Company name"
-    case dateApplied = "Date applied"
-    case favorite = "Favorite"
-}
-
 struct JobsView: View {
     // MARK: - Properties
 
+    @AppStorage("sortingIndex") private var selectedFilterOption = 0
     @EnvironmentObject var jobStore: JobStore
     @State private var jobSearchText = ""
-    @State private var selectedFilterOption = 3
     @State private var addJobScreenVisible = false
 
-    private var sortingOptions: [Sort] = [.title, .company, .dateApplied, .favorite]
+    private var sortingOptions: [Sort] = [.title, .company, .recentlyApplied]
 
     private var filteredJobs: [Job] {
         jobStore.jobs.filter({
@@ -41,6 +32,16 @@ struct JobsView: View {
         addJobScreenVisible = true
     }
 
+    private func configureView() {
+        jobStore.sortJobs(by: sortingOptions[selectedFilterOption])
+    }
+
+    private func handleSortingOptionChange<V>(_ value: V) {
+        withAnimation {
+            jobStore.sortJobs(by: sortingOptions[selectedFilterOption])
+        }
+    }
+
     // MARK: - Body
 
     private var navigationBarItems: some ToolbarContent {
@@ -48,10 +49,10 @@ struct JobsView: View {
             ToolbarItem(placement: .navigationBarLeading) {
                 Menu {
                     Picker("Filter options", selection: $selectedFilterOption) {
-                        Text(sortingOptions[0].rawValue).tag(0)
-                        Text(sortingOptions[1].rawValue).tag(1)
-                        Text(sortingOptions[2].rawValue).tag(2)
-                        Text(sortingOptions[3].rawValue).tag(3)
+                        ForEach(sortingOptions.indices) { index in
+                            Text(sortingOptions[index].rawValue)
+                                .tag(index)
+                        }
                     }
                 } label: {
                     Image(systemName: "slider.horizontal.3")
@@ -103,6 +104,8 @@ struct JobsView: View {
             .toolbar { navigationBarItems }
             JobDetailView(job: nil)
         }
+        .onAppear(perform: configureView)
+        .onChange(of: selectedFilterOption, perform: handleSortingOptionChange)
         .tabItem {
             Image(systemName: "briefcase")
             Text("Jobs")
