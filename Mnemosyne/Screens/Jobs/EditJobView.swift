@@ -115,7 +115,7 @@ struct EditJobView: View {
                             Text("Status")
                                 .foregroundColor(.primary)
                             Spacer()
-                            Text("\(statusOptions[status].rawValue)")
+                            Text(statusOptions[status].rawValue)
                                 .foregroundColor(.secondary)
                         }
                     }

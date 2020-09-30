@@ -73,14 +73,14 @@ struct JobListItemView: View {
         HStack {
             // TODO: Look into using Crunchbase API to provide images
             VStack(alignment: .leading) {
-                Text("\(job.title)")
+                Text(job.title)
                     .font(.body)
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
-                Text("\(job.company)")
+                Text(job.company)
                     .font(.subheadline)
                     .foregroundColor(.gray)
-                Text("\(job.status.rawValue)")
+                Text(job.status.rawValue)
                     .font(.subheadline)
                     .foregroundColor(statusColor)
             }
