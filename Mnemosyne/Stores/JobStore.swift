@@ -69,6 +69,18 @@ class JobStore: ObservableObject {
         }
     }
 
+    func getNumberOfJobs(for status: Status) -> Int {
+        var count = 0
+
+        for job in jobs {
+            if status == job.status {
+                count += 1
+            }
+        }
+
+        return count
+    }
+
     func sortJobs(by sort: Sort) {
         switch sort {
         case .title:
@@ -81,18 +93,6 @@ class JobStore: ObservableObject {
             jobs.sort(by: { $0.dateApplied > $1.dateApplied })
             sorting = .recentlyApplied
         }
-    }
-
-    func getNumberOfJobs(for status: Status) -> Int {
-        var count = 0
-
-        for job in jobs {
-            if status == job.status {
-                count += 1
-            }
-        }
-
-        return count
     }
 
     // MARK: - Local storage

@@ -79,6 +79,20 @@ class JobStoreTests: XCTestCase {
         XCTAssertFalse(deletedJobFound, "The deleted job was found; thus the method failed")
     }
 
+    func testDeleteJobsMethod() {
+        let jobStore = JobStore()
+
+        // Adds jobs to the job store and checks that the job count is correct
+        jobStore.createJob(with: JobStoreTests.job1)
+        jobStore.createJob(with: JobStoreTests.job2)
+        jobStore.createJob(with: JobStoreTests.job3)
+        XCTAssertEqual(jobStore.jobs.count, 3)
+
+        // Deletes jobs from the job store and checks if the jobs array is empty
+        jobStore.deleteJobs()
+        XCTAssertTrue(jobStore.jobs.isEmpty)
+    }
+
     func testEditJobMethod() {
         let jobStore = JobStore()
         jobStore.createJob(with: JobStoreTests.job1)
@@ -141,5 +155,19 @@ class JobStoreTests: XCTestCase {
                 XCTAssertFalse(job.favorite)
             }
         }
+    }
+
+    func testGetNumberOfJobsForStatus() {
+        let jobStore = JobStore()
+
+        jobStore.createJob(with: JobStoreTests.job2)
+        jobStore.createJob(with: JobStoreTests.job3)
+
+        // Checks if all status cases yield the right count
+        XCTAssertEqual(jobStore.getNumberOfJobs(for: .applied), 0)
+        XCTAssertEqual(jobStore.getNumberOfJobs(for: .phoneScreen), 0)
+        XCTAssertEqual(jobStore.getNumberOfJobs(for: .onSite), 0)
+        XCTAssertEqual(jobStore.getNumberOfJobs(for: .offer), 1)
+        XCTAssertEqual(jobStore.getNumberOfJobs(for: .rejected), 1)
     }
 }
