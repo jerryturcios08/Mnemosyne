@@ -36,6 +36,11 @@ class JobStore: ObservableObject {
         }
     }
 
+    func deleteJobs() {
+        jobs = []
+        saveJobs()
+    }
+
     func editJob(with updatedJob: Job) {
         for (index, job) in jobs.enumerated() {
             if updatedJob.id == job.id {
@@ -76,6 +81,18 @@ class JobStore: ObservableObject {
             jobs.sort(by: { $0.dateApplied > $1.dateApplied })
             sorting = .recentlyApplied
         }
+    }
+
+    func getNumberOfJobs(for status: Status) -> Int {
+        var count = 0
+
+        for job in jobs {
+            if status == job.status {
+                count += 1
+            }
+        }
+
+        return count
     }
 
     // MARK: - Local storage

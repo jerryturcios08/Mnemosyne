@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Status: String, Codable {
+enum Status: String, CaseIterable, Codable {
     case applied = "Applied"
     case phoneScreen = "Phone Screen"
     case onSite = "On Site"
