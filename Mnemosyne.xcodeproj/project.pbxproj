@@ -21,7 +21,7 @@
 		C6F2A8772505CB200032D31C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F2A8762505CB200032D31C /* Preview Assets.xcassets */; };
 		C6F2A88A2505CCC90032D31C /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8892505CCC90032D31C /* constants.swift */; };
 		C6F2A88E2505CD690032D31C /* JobListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A88D2505CD690032D31C /* JobListItemView.swift */; };
-		C6F2A8912505CDFB0032D31C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8902505CDFB0032D31C /* SettingsView.swift */; };
+		C6F2A8912505CDFB0032D31C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8902505CDFB0032D31C /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,7 @@
 		C6F2A87D2505CB200032D31C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6F2A8892505CCC90032D31C /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		C6F2A88D2505CD690032D31C /* JobListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListItemView.swift; sourceTree = "<group>"; };
-		C6F2A8902505CDFB0032D31C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C6F2A8902505CDFB0032D31C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				C6F2A88C2505CD520032D31C /* Jobs */,
-				C6F2A88F2505CDE70032D31C /* Settings */,
+				C6F2A88F2505CDE70032D31C /* Profile */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -187,12 +187,12 @@
 			path = Jobs;
 			sourceTree = "<group>";
 		};
-		C6F2A88F2505CDE70032D31C /* Settings */ = {
+		C6F2A88F2505CDE70032D31C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				C6F2A8902505CDFB0032D31C /* SettingsView.swift */,
+				C6F2A8902505CDFB0032D31C /* ProfileView.swift */,
 			);
-			path = Settings;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6B2B6B52505F3D9006E9BCA /* SearchBarView.swift in Sources */,
-				C6F2A8912505CDFB0032D31C /* SettingsView.swift in Sources */,
+				C6F2A8912505CDFB0032D31C /* ProfileView.swift in Sources */,
 				C644AF2D2506B02C00431C04 /* JobStore.swift in Sources */,
 				C6AB1B6B250ACA12009CE6BE /* JobDetailView.swift in Sources */,
 				C6F2A8722505CB1E0032D31C /* JobsView.swift in Sources */,

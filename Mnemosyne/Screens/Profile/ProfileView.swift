@@ -1,5 +1,5 @@
 //
-//  SettingsView.swift
+//  ProfileView.swift
 //  Mnemosyne
 //
 //  Created by Jerry Turcios on 9/6/20.
@@ -7,26 +7,26 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+struct ProfileView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Settings")
+                Text("Profile")
             }
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Settings")
+            .navigationTitle("Profile")
         }
         .tabItem {
-            Image(systemName: "gear")
-            Text("Settings")
+            Image(systemName: "person")
+            Text("Profile")
         }
     }
 }
 
 #if DEBUG
-struct SettingsViewPreviews: PreviewProvider {
+struct ProfileViewPreviews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        ProfileView()
             .previewDevice("iPhone SE (1st generation)")
     }
 }

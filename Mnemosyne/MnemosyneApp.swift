@@ -15,7 +15,7 @@ struct MnemosyneApp: App {
         WindowGroup {
             TabView {
                 JobsView()
-                SettingsView()
+                ProfileView()
             }
             .environmentObject(jobStore)
             .onAppear(perform: jobStore.loadJobs)
