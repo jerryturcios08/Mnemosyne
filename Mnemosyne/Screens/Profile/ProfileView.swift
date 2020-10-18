@@ -60,7 +60,7 @@ struct ProfileView: View {
                     JobsGraphView()
                         .padding(.bottom, 20)
                     HStack {
-                        Text("Achievement")
+                        Text("Achievements")
                             .font(.title2)
                             .fontWeight(.bold)
                         Spacer()
