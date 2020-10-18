@@ -58,7 +58,15 @@ struct ProfileView: View {
                     }
                     .padding([.leading, .vertical])
                     JobsGraphView()
-                    Spacer()
+                        .padding(.bottom, 20)
+                    HStack {
+                        Text("Achievement")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
+                    .padding([.leading, .vertical])
+                    AchievementsView()
                 }
             }
             .alert(isPresented: $deleteJobsAlertVisible) { deleteJobsAlert }
@@ -66,6 +74,7 @@ struct ProfileView: View {
             .navigationTitle("Profile")
             .toolbar { navigationBarItems }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .tabItem {
             Image(systemName: "person")
             Text("Profile")

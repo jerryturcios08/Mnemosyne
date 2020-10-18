@@ -22,7 +22,7 @@ struct JobsGraphView: View {
                 JobsGraphItemView(status: status)
             }
         }
-        .padding(.horizontal, 20)
+        .padding(.horizontal)
     }
 }
 

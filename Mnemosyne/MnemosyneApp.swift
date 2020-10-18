@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct MnemosyneApp: App {
+    @StateObject private var achievementStore = AchievementStore()
     @StateObject private var jobStore = JobStore()
 
     var body: some Scene {
@@ -17,6 +18,7 @@ struct MnemosyneApp: App {
                 JobsView()
                 ProfileView()
             }
+            .environmentObject(achievementStore)
             .environmentObject(jobStore)
             .onAppear(perform: jobStore.loadJobs)
         }

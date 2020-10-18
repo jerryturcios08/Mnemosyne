@@ -24,6 +24,9 @@
 		C6F2A8912505CDFB0032D31C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8902505CDFB0032D31C /* ProfileView.swift */; };
 		C6FB8CAD253B855B0044A4E0 /* JobsGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB8CAC253B855B0044A4E0 /* JobsGraphView.swift */; };
 		C6FB8CB3253B89080044A4E0 /* JobsGraphItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB8CB2253B89080044A4E0 /* JobsGraphItemView.swift */; };
+		C6FB8CBD253BCB490044A4E0 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB8CBC253BCB490044A4E0 /* AchievementsView.swift */; };
+		C6FB8CC3253BCBF30044A4E0 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB8CC2253BCBF30044A4E0 /* Achievement.swift */; };
+		C6FB8CC7253BD01E0044A4E0 /* AchievementStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB8CC6253BD01E0044A4E0 /* AchievementStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		C6F2A8902505CDFB0032D31C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C6FB8CAC253B855B0044A4E0 /* JobsGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsGraphView.swift; sourceTree = "<group>"; };
 		C6FB8CB2253B89080044A4E0 /* JobsGraphItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsGraphItemView.swift; sourceTree = "<group>"; };
+		C6FB8CBC253BCB490044A4E0 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		C6FB8CC2253BCBF30044A4E0 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		C6FB8CC6253BD01E0044A4E0 /* AchievementStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		C644AF262506AFB000431C04 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C6FB8CC2253BCBF30044A4E0 /* Achievement.swift */,
 				C644AF292506AFFE00431C04 /* Job.swift */,
 			);
 			path = Models;
@@ -89,6 +96,7 @@
 		C644AF2B2506B01300431C04 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				C6FB8CC6253BD01E0044A4E0 /* AchievementStore.swift */,
 				C644AF2C2506B02C00431C04 /* JobStore.swift */,
 			);
 			path = Stores;
@@ -174,6 +182,7 @@
 		C6F2A8882505CB850032D31C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C6FB8CBC253BCB490044A4E0 /* AchievementsView.swift */,
 				C6F2A88D2505CD690032D31C /* JobListItemView.swift */,
 				C6FB8CB2253B89080044A4E0 /* JobsGraphItemView.swift */,
 				C6FB8CAC253B855B0044A4E0 /* JobsGraphView.swift */,
@@ -311,10 +320,12 @@
 			files = (
 				C6B2B6B52505F3D9006E9BCA /* SearchBarView.swift in Sources */,
 				C6F2A8912505CDFB0032D31C /* ProfileView.swift in Sources */,
+				C6FB8CBD253BCB490044A4E0 /* AchievementsView.swift in Sources */,
 				C6FB8CB3253B89080044A4E0 /* JobsGraphItemView.swift in Sources */,
 				C644AF2D2506B02C00431C04 /* JobStore.swift in Sources */,
 				C6AB1B6B250ACA12009CE6BE /* JobDetailView.swift in Sources */,
 				C6F2A8722505CB1E0032D31C /* JobsView.swift in Sources */,
+				C6FB8CC7253BD01E0044A4E0 /* AchievementStore.swift in Sources */,
 				C6AB1B6D250AD17D009CE6BE /* EditJobView.swift in Sources */,
 				C6FB8CAD253B855B0044A4E0 /* JobsGraphView.swift in Sources */,
 				C618F3A92505DFD000556CD9 /* AddJobView.swift in Sources */,
@@ -322,6 +333,7 @@
 				C6F2A8702505CB1E0032D31C /* MnemosyneApp.swift in Sources */,
 				C6F2A88E2505CD690032D31C /* JobListItemView.swift in Sources */,
 				C644AF2A2506AFFE00431C04 /* Job.swift in Sources */,
+				C6FB8CC3253BCBF30044A4E0 /* Achievement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
