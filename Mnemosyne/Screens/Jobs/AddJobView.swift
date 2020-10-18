@@ -11,6 +11,7 @@ struct AddJobView: View {
     // MARK: - Properties
 
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var achievementStore: AchievementStore
     @EnvironmentObject var jobStore: JobStore
 
     @State private var titleText = ""
@@ -48,6 +49,7 @@ struct AddJobView: View {
             )
 
             jobStore.createJob(with: job)
+            achievementStore.incrementAppliedJobsCount()
             presentationMode.wrappedValue.dismiss()
         }
     }

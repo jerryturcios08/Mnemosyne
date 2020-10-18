@@ -11,6 +11,7 @@ struct EditJobView: View {
     // MARK: - Properties
 
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var achievementStore: AchievementStore
     @EnvironmentObject var jobStore: JobStore
 
     @State private var titleText = ""
@@ -67,6 +68,12 @@ struct EditJobView: View {
                 favorite: job.favorite,
                 status: statusOptions[status]
             )
+
+            if updatedJob.status == .offer {
+                achievementStore.toggleRecievedOfferAchievement()
+            } else if updatedJob.status == .rejected {
+                achievementStore.toggleRecievedRejectionAchievement()
+            }
 
             jobStore.editJob(with: updatedJob)
             presentationMode.wrappedValue.dismiss()

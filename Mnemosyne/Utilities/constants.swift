@@ -8,5 +8,7 @@
 import Foundation
 
 enum Key {
+    static let achievements = "Achievements"
+    static let achievementsMetadata = "achievementsMetadata"
     static let jobs = "jobs"
 }

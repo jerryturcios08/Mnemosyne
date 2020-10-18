@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct Achievement: Identifiable {
+struct Achievement: Codable, Identifiable {
     var id = UUID()
     var title: String
+    var description: String
     var imageString: String
     var completed: Bool
 }

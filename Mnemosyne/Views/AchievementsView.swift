@@ -10,6 +10,10 @@ import SwiftUI
 struct AchievementsView: View {
     @EnvironmentObject var achievementStore: AchievementStore
 
+    private func configureView() {
+        achievementStore.loadAchievements()
+    }
+
     private var columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -27,9 +31,10 @@ struct AchievementsView: View {
                         .font(.footnote)
                         .fontWeight(.semibold)
                 }
-                .opacity(achievement.completed ? 1 : 0.3)
+                .opacity(achievement.completed ? 1 : 0.2)
             }
         }
+        .onAppear(perform: configureView)
         .padding(.horizontal)
     }
 }
