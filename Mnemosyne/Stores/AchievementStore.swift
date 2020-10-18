@@ -15,6 +15,8 @@ class AchievementStore: ObservableObject {
     @Published var hasRecievedOffer = false
     @Published var hasRecievedRejection = false
 
+    // TODO: Implement the share functionality once the app is deployed
+
     @Published var achievements: [Achievement] = [
         .init(title: "Rookie", description: "Applied to first job.", imageString: "Rookie", completed: false),
         .init(title: "I plead the fifth", description: "Applied to 5 jobs.", imageString: "TheFifth", completed: false),
@@ -23,7 +25,7 @@ class AchievementStore: ObservableObject {
         .init(title: "Don't stop me now", description: "Applied to 200 jobs.", imageString: "DontStopMeNow", completed: false),
         .init(title: "Victory", description: "Recieved a job offer.", imageString: "Victory", completed: false),
         .init(title: "Mission failed", description: "Recieved a job rejection.", imageString: "MissionFailed", completed: false),
-        .init(title: "I bring good news", description: "Shared the app 10 times.", imageString: "GoodNews", completed: false)
+//        .init(title: "I bring good news", description: "Shared the app 10 times.", imageString: "GoodNews", completed: false)
     ]
 
     // MARK: - Methods

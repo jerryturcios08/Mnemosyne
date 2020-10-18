@@ -10,6 +10,7 @@
 		C618F3A92505DFD000556CD9 /* AddJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618F3A82505DFD000556CD9 /* AddJobView.swift */; };
 		C644AF2A2506AFFE00431C04 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644AF292506AFFE00431C04 /* Job.swift */; };
 		C644AF2D2506B02C00431C04 /* JobStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C644AF2C2506B02C00431C04 /* JobStore.swift */; };
+		C67D586C253BF592000FBA4F /* AchievementModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67D586B253BF592000FBA4F /* AchievementModalView.swift */; };
 		C6AB1B6B250ACA12009CE6BE /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AB1B6A250ACA12009CE6BE /* JobDetailView.swift */; };
 		C6AB1B6D250AD17D009CE6BE /* EditJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AB1B6C250AD17D009CE6BE /* EditJobView.swift */; };
 		C6B2B6B52505F3D9006E9BCA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2B6B42505F3D9006E9BCA /* SearchBarView.swift */; };
@@ -43,6 +44,7 @@
 		C618F3A82505DFD000556CD9 /* AddJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobView.swift; sourceTree = "<group>"; };
 		C644AF292506AFFE00431C04 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		C644AF2C2506B02C00431C04 /* JobStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobStore.swift; sourceTree = "<group>"; };
+		C67D586B253BF592000FBA4F /* AchievementModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModalView.swift; sourceTree = "<group>"; };
 		C6AB1B6A250ACA12009CE6BE /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
 		C6AB1B6C250AD17D009CE6BE /* EditJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditJobView.swift; sourceTree = "<group>"; };
 		C6B2B6B42505F3D9006E9BCA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		C6F2A8882505CB850032D31C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C67D586B253BF592000FBA4F /* AchievementModalView.swift */,
 				C6FB8CBC253BCB490044A4E0 /* AchievementsView.swift */,
 				C6F2A88D2505CD690032D31C /* JobListItemView.swift */,
 				C6FB8CB2253B89080044A4E0 /* JobsGraphItemView.swift */,
@@ -333,6 +336,7 @@
 				C6F2A8702505CB1E0032D31C /* MnemosyneApp.swift in Sources */,
 				C6F2A88E2505CD690032D31C /* JobListItemView.swift in Sources */,
 				C644AF2A2506AFFE00431C04 /* Job.swift in Sources */,
+				C67D586C253BF592000FBA4F /* AchievementModalView.swift in Sources */,
 				C6FB8CC3253BCBF30044A4E0 /* Achievement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

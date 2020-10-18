@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct AchievementsView: View {
+    // MARK: - Properties
+
     @EnvironmentObject var achievementStore: AchievementStore
+
+    // MARK: - Methods
 
     private func configureView() {
         achievementStore.loadAchievements()
     }
+
+    // MARK: - Body
 
     private var columns = [
         GridItem(.flexible()),
@@ -39,16 +45,20 @@ struct AchievementsView: View {
     }
 }
 
+// MARK: - Previews
+
 #if DEBUG
 struct AchievementsViewPreviews: PreviewProvider {
     static var previews: some View {
         Group {
             AchievementsView()
                 .previewLayout(.sizeThatFits)
+                .environmentObject(AchievementStore())
                 .padding(.vertical)
             AchievementsView()
                 .preferredColorScheme(.dark)
                 .environment(\.sizeCategory, .accessibilityMedium)
+                .environmentObject(AchievementStore())
                 .previewLayout(.sizeThatFits)
                 .padding(.vertical)
         }
