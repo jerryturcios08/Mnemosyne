@@ -19,7 +19,6 @@
 		C6F2A8702505CB1E0032D31C /* MnemosyneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A86F2505CB1E0032D31C /* MnemosyneApp.swift */; };
 		C6F2A8722505CB1E0032D31C /* JobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8712505CB1E0032D31C /* JobsView.swift */; };
 		C6F2A8742505CB200032D31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F2A8732505CB200032D31C /* Assets.xcassets */; };
-		C6F2A8772505CB200032D31C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6F2A8762505CB200032D31C /* Preview Assets.xcassets */; };
 		C6F2A88A2505CCC90032D31C /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8892505CCC90032D31C /* constants.swift */; };
 		C6F2A88E2505CD690032D31C /* JobListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A88D2505CD690032D31C /* JobListItemView.swift */; };
 		C6F2A8912505CDFB0032D31C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2A8902505CDFB0032D31C /* ProfileView.swift */; };
@@ -56,7 +55,6 @@
 		C6F2A86F2505CB1E0032D31C /* MnemosyneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemosyneApp.swift; sourceTree = "<group>"; };
 		C6F2A8712505CB1E0032D31C /* JobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsView.swift; sourceTree = "<group>"; };
 		C6F2A8732505CB200032D31C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C6F2A8762505CB200032D31C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C6F2A87D2505CB200032D31C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6F2A8892505CCC90032D31C /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		C6F2A88D2505CD690032D31C /* JobListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListItemView.swift; sourceTree = "<group>"; };
@@ -143,25 +141,16 @@
 		C6F2A86E2505CB1E0032D31C /* Mnemosyne */ = {
 			isa = PBXGroup;
 			children = (
-				C6F2A8842505CB5E0032D31C /* Assets */,
 				C644AF262506AFB000431C04 /* Models */,
 				C6F2A8852505CB660032D31C /* Screens */,
 				C644AF2B2506B01300431C04 /* Stores */,
 				C6F2A8862505CB6B0032D31C /* Utilities */,
 				C6F2A8882505CB850032D31C /* Views */,
+				C6F2A8732505CB200032D31C /* Assets.xcassets */,
 				C6F2A87D2505CB200032D31C /* Info.plist */,
 				C6F2A86F2505CB1E0032D31C /* MnemosyneApp.swift */,
 			);
 			path = Mnemosyne;
-			sourceTree = "<group>";
-		};
-		C6F2A8842505CB5E0032D31C /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				C6F2A8732505CB200032D31C /* Assets.xcassets */,
-				C6F2A8762505CB200032D31C /* Preview Assets.xcassets */,
-			);
-			path = Assets;
 			sourceTree = "<group>";
 		};
 		C6F2A8852505CB660032D31C /* Screens */ = {
@@ -300,7 +289,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6F2A8772505CB200032D31C /* Preview Assets.xcassets in Resources */,
 				C6F2A8742505CB200032D31C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,8 +502,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_ASSET_PATHS = "\"Mnemosyne/Assets\"";
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = DU8BZ7Q774;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Mnemosyne/Info.plist;
@@ -537,8 +524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_ASSET_PATHS = "\"Mnemosyne/Assets\"";
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = DU8BZ7Q774;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Mnemosyne/Info.plist;
