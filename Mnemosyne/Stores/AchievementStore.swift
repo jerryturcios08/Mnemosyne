@@ -13,7 +13,6 @@ class AchievementStore: ObservableObject {
     @Published var appliedJobsCount = 0
     @Published var sharedAppCount = 0
     @Published var hasRecievedOffer = false
-    @Published var hasRecievedRejection = false
 
     // TODO: Implement the share functionality once the app is deployed
 
@@ -24,7 +23,6 @@ class AchievementStore: ObservableObject {
         .init(title: "Hundred", description: "Applied to 100 jobs.", imageString: "Hundred", completed: false),
         .init(title: "Don't stop me now", description: "Applied to 200 jobs.", imageString: "DontStopMeNow", completed: false),
         .init(title: "Victory", description: "Recieved a job offer.", imageString: "Victory", completed: false),
-        .init(title: "Mission failed", description: "Recieved a job rejection.", imageString: "MissionFailed", completed: false),
 //        .init(title: "I bring good news", description: "Shared the app 10 times.", imageString: "GoodNews", completed: false)
     ]
 
@@ -61,11 +59,6 @@ class AchievementStore: ObservableObject {
         saveAchievements()
     }
 
-    func toggleRecievedRejectionAchievement() {
-        achievements[6].completed = true
-        saveAchievements()
-    }
-
     // MARK: - Local storage
 
     func saveAchievements() {
@@ -73,7 +66,6 @@ class AchievementStore: ObservableObject {
             "appliedJobsCount": appliedJobsCount,
             "sharedAppCount": sharedAppCount,
             "hasRecievedOffer": hasRecievedOffer,
-            "hasRecievedRejection": hasRecievedRejection
         ]
 
         do {
@@ -93,7 +85,6 @@ class AchievementStore: ObservableObject {
         guard let appliedJobsCount = achievementsMetadata["appliedJobsCount"] as? Int else { return }
         guard let sharedAppCount = achievementsMetadata["sharedAppCount"] as? Int else { return }
         guard let hasRecievedOffer = achievementsMetadata["hasRecievedOffer"] as? Bool else { return }
-        guard let hasRecievedRejection = achievementsMetadata["hasRecievedRejection"] as? Bool else { return }
 
         do {
             achievements = try JSONDecoder().decode([Achievement].self, from: savedAchievements)
@@ -101,7 +92,6 @@ class AchievementStore: ObservableObject {
             self.appliedJobsCount = appliedJobsCount
             self.sharedAppCount = sharedAppCount
             self.hasRecievedOffer = hasRecievedOffer
-            self.hasRecievedRejection = hasRecievedRejection
         } catch {
             fatalError(error.localizedDescription)
         }

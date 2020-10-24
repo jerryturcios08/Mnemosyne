@@ -71,8 +71,6 @@ struct EditJobView: View {
 
             if updatedJob.status == .offer {
                 achievementStore.toggleRecievedOfferAchievement()
-            } else if updatedJob.status == .rejected {
-                achievementStore.toggleRecievedRejectionAchievement()
             }
 
             jobStore.editJob(with: updatedJob)
